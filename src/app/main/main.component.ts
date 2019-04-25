@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as vis from 'vis';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { TwitterService } from '../services/twitter.service';
+
 declare var vis;
 
 
@@ -9,8 +12,18 @@ declare var vis;
   styleUrls: ['./main.component.sass']
 })
 export class MainComponent implements OnInit {
+  public form: FormGroup;
 
-  constructor() { }
+  constructor(private readonly formBuilder: FormBuilder, private twitter: TwitterService) {
+    this.form = this.formBuilder.group({
+      userName1: [''],
+      userName2: ['']
+    });
+  }
+
+  generateGraph() {
+    const result = this.twitter.getCommonFriends(this.form.value);
+  }
 
   ngOnInit() {
     var nodes = [

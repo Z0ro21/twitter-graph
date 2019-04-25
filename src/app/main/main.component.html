@@ -1,14 +1,14 @@
 <div class="container">
-  <form>
+  <form [formGroup]="form">
     <div class="form-group">
       <label for="username1">Nombre de usuario 1</label>
-      <input type="email" class="form-control" id="username1" placeholder="Ingresa el nombre de usuario">
+      <input type="email" class="form-control" id="username1" placeholder="Ingresa el nombre de usuario" formControlName="comment">
     </div>
     <div class="form-group">
       <label for="username2">Nombre de usuario 2</label>
-      <input type="email" class="form-control" id="username2" placeholder="Ingresa el nombre de usuario">
+      <input type="email" class="form-control" id="username2" placeholder="Ingresa el nombre de usuario" formControlName="comment">
     </div>
-    <button type="submit" class="btn btn-primary">Generar Grafo</button>
+    <button type="submit" class="btn btn-primary" (click)="">Generar Grafo</button>
   </form>
 </div>
 
