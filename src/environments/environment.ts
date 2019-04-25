@@ -8,4 +8,4 @@ export const environment = {
     storageBucket: 'twitter-graph-codecamp.appspot.com',
     messagingSenderId: '1059779557118'
   }
-}
+};
