@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireFunctionsModule, FunctionsRegionToken } from '@angular/fire/functions';
 import { environment } from 'src/environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainComponent } from './main/main.component';
+
+import { TwitterService } from './services/twitter.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,13 @@ import { MainComponent } from './main/main.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireFunctionsModule
   ],
-  providers: [],
+  providers: [
+    TwitterService,
+    { provide: FunctionsRegionToken,  useValue: 'us-central1' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
