@@ -27,9 +27,10 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/vis/dist/vis.css",
               "src/styles.sass"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/vis/dist/vis.min.js"],
             "es5BrowserSupport": true
           },
           "configurations": {
